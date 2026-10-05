@@ -39,9 +39,13 @@ public class CheckoutSessionService implements CheckoutSession {
                         CreateCheckoutSessionResponse.class
                 );
 
+        CreateCheckoutSessionResponse responseObject = new CreateCheckoutSessionResponse();
+        responseObject.setId(response.getId());
+        responseObject.setUrl(response.getUrl());
+
         log.info("Converted response to CreateCheckoutSessionResponse: {}", response);
 
-        return response;
+        return responseObject;
 
     }
 }
